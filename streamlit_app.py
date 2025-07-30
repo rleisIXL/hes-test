@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Title
-st.title("Health Equity Simulation Data")
+st.title("Health Equity Simulation Test")
 
 # File uploader
 uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
