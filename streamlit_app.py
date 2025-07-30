@@ -5,13 +5,22 @@ import pandas as pd
 st.title("Health Equity Simulation Test")
 
 # File uploader
-uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
+uploaded_file = st.file_uploader("Choose a CSV or Excel file", type=["csv", "xlsx", "xls"])
 
-# Check if a file has been uploaded
 if uploaded_file is not None:
-    # Read the file (as a DataFrame if it's CSV)
-    df = pd.read_csv(uploaded_file)
+    file_name = uploaded_file.name
 
-    # Display the data
-    st.write("Preview of uploaded data:")
-    st.dataframe(df)
+    try:
+        if file_name.endswith(".csv"):
+            df = pd.read_csv(uploaded_file)
+        elif file_name.endswith((".xlsx", ".xls")):
+            df = pd.read_excel(uploaded_file)
+        else:
+            st.error("Unsupported file format.")
+            df = None
+
+        if df is not None:
+            st.success(f"Successfully loaded: {file_name}")
+            st.dataframe(df)
+    except Exception as e:
+        st.error(f"Error reading file: {e}")
