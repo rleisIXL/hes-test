@@ -1,0 +1,5 @@
+[theme]
+primaryColor = "#1fffffff"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#1F6B51"  # This affects sidebar too
+textColor = "#000000"
