@@ -1,16 +1,8 @@
 import streamlit as st
 
-#Page Navigation
-pages=[
-    st.Page(page:"app_pages/Demographics.py", title="Demographics")
-    st.Page(page:"app_pages/Initial_Evaluation.py", title="Initial Evaluation")
-]
-
-#Adding pages to the sidebar
-pg = st. navigation(paged, postition="sidebar", expanded=True)
-
-#Running the app
-pr.run()
+def page_link():
+    st.page_link("app_pages/Demographics.py", label="Demographics Page")
+    st.page_link("app_pages/Initial_Evaluation.py", label="Eval Page")
 
 st.set_page_config(page_title="Simulation Data", layout="wide")
 
