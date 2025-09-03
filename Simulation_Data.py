@@ -1,9 +1,9 @@
 import streamlit as st
-from streamlit_option_menu import streamlit_option_menu
+from streamlit_option_menu import option_menu
 
 with st.sidebar:
     selected = option_menu(
-        menu_title=None
+        menu_title=None,
         options=["Simulation Data", "Demographics", "Initital Evaluation"],
     )
 
