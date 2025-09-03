@@ -9,8 +9,8 @@ st.markdown(
         section[data-testid="stSidebar"] {
             background-color: #f0f0f5;
         }
-    </style>
-    
+    </style>,
+
     unsafe_allow_html=True
 )
 
